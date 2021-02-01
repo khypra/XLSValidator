@@ -1,0 +1,169 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.6.1": {
+      "LinqToExcel_x64/1.10.1": {
+        "type": "package",
+        "dependencies": {
+          "log4net": "(, )"
+        },
+        "compile": {
+          "lib/LinqToExcel.dll": {},
+          "lib/Remotion.Data.Linq.dll": {},
+          "lib/Remotion.Interfaces.dll": {},
+          "lib/Remotion.dll": {}
+        },
+        "runtime": {
+          "lib/LinqToExcel.dll": {},
+          "lib/Remotion.Data.Linq.dll": {},
+          "lib/Remotion.Interfaces.dll": {},
+          "lib/Remotion.dll": {}
+        }
+      },
+      "log4net/1.2.10": {
+        "type": "package",
+        "compile": {
+          "lib/2.0/log4net.dll": {}
+        },
+        "runtime": {
+          "lib/2.0/log4net.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6.1/win7-x86": {
+      "LinqToExcel_x64/1.10.1": {
+        "type": "package",
+        "dependencies": {
+          "log4net": "(, )"
+        },
+        "compile": {
+          "lib/LinqToExcel.dll": {},
+          "lib/Remotion.Data.Linq.dll": {},
+          "lib/Remotion.Interfaces.dll": {},
+          "lib/Remotion.dll": {}
+        },
+        "runtime": {
+          "lib/LinqToExcel.dll": {},
+          "lib/Remotion.Data.Linq.dll": {},
+          "lib/Remotion.Interfaces.dll": {},
+          "lib/Remotion.dll": {}
+        }
+      },
+      "log4net/1.2.10": {
+        "type": "package",
+        "compile": {
+          "lib/2.0/log4net.dll": {}
+        },
+        "runtime": {
+          "lib/2.0/log4net.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LinqToExcel_x64/1.10.1": {
+      "sha512": "MssAn6qr/nem5gBYQxVHPDdE6upHvRGw+rmL4HzGTC6auYVEaX4VR6r0/4UOcz6Mcgv9oqJbbbeXgRg4QfAjzA==",
+      "type": "package",
+      "path": "linqtoexcel_x64/1.10.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/LinqToExcel.dll",
+        "lib/LinqToExcel.xml",
+        "lib/Remotion.Data.Linq.dll",
+        "lib/Remotion.Interfaces.dll",
+        "lib/Remotion.dll",
+        "linqtoexcel_x64.1.10.1.nupkg.sha512",
+        "linqtoexcel_x64.nuspec"
+      ]
+    },
+    "log4net/1.2.10": {
+      "sha512": "yP7PCpxPt5cB9yiRAvCwyW5YRqXV4jM4tpVLnm/ls2nJt786l5srbSdm5xIEVMXz/kOYqLKP177Gyqey1wdP/A==",
+      "type": "package",
+      "path": "log4net/1.2.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/1.0/log4net.dll",
+        "lib/1.0/log4net.xml",
+        "lib/1.1/log4net.dll",
+        "lib/1.1/log4net.xml",
+        "lib/2.0/log4net.dll",
+        "lib/2.0/log4net.xml",
+        "log4net.1.2.10.nupkg.sha512",
+        "log4net.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.6.1": [
+      "LinqToExcel_x64 >= 1.10.1"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\mathe\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\mathe\\Documents\\Atos\\Atos Projetos\\XLSValidator\\XLSValidator.csproj",
+      "projectName": "XLSValidator",
+      "projectPath": "C:\\Users\\mathe\\Documents\\Atos\\Atos Projetos\\XLSValidator\\XLSValidator.csproj",
+      "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mathe\\Documents\\Atos\\Atos Projetos\\XLSValidator\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net461"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net461": {
+          "targetAlias": "net461",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net461": {
+        "targetAlias": "net461",
+        "dependencies": {
+          "LinqToExcel_x64": {
+            "target": "Package",
+            "version": "[1.10.1, )"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win7-x86": {
+        "#import": []
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1602",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "LinqToExcel_x64 1.10.1 não fornece nenhum limite inferior inclusivo para a dependência log4net. A melhor correspondência aproximada log4net 1.2.10 foi resolvida.",
+      "libraryId": "log4net",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.6.1",
+        ".NETFramework,Version=v4.6.1/win7-x86"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\XLS Validator\bin\Debug\XLS Validator.exe.config
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\XLS Validator\bin\Debug\XLS Validator.exe
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\XLS Validator\bin\Debug\XLS Validator.pdb
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\XLS Validator\bin\Debug\LinqToExcel.dll
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\XLS Validator\bin\Debug\Remotion.Data.Linq.dll
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\XLS Validator\bin\Debug\Remotion.dll
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\XLS Validator\bin\Debug\Remotion.Interfaces.dll
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\XLS Validator\bin\Debug\LinqToExcel.xml
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\XLS Validator\obj\Debug\XLS Validator.csprojAssemblyReference.cache
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\XLS Validator\obj\Debug\XLS_Validator.Properties.Resources.resources
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\XLS Validator\obj\Debug\XLS Validator.csproj.GenerateResource.cache
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\XLS Validator\obj\Debug\XLS Validator.csproj.CoreCompileInputs.cache
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\XLS Validator\obj\Debug\XLS Validator.csproj.CopyComplete
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\XLS Validator\obj\Debug\XLS Validator.exe
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\XLS Validator\obj\Debug\XLS Validator.pdb
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\XLS Validator\obj\Debug\AtosCapital.XLSValidator.resources
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\XLS Validator\bin\Debug\BancoDados.dll

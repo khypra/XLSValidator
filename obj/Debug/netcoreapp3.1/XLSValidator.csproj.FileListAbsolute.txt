@@ -1,0 +1,15 @@
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\bin\Debug\netcoreapp3.1\XLSValidator.exe
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\bin\Debug\netcoreapp3.1\XLSValidator.deps.json
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\bin\Debug\netcoreapp3.1\XLSValidator.runtimeconfig.json
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\bin\Debug\netcoreapp3.1\XLSValidator.runtimeconfig.dev.json
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\bin\Debug\netcoreapp3.1\XLSValidator.dll
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\bin\Debug\netcoreapp3.1\XLSValidator.pdb
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\obj\Debug\netcoreapp3.1\XLSValidator.csprojAssemblyReference.cache
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\obj\Debug\netcoreapp3.1\XLSValidator.Form1.resources
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\obj\Debug\netcoreapp3.1\XLSValidator.csproj.GenerateResource.cache
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\obj\Debug\netcoreapp3.1\XLSValidator.AssemblyInfoInputs.cache
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\obj\Debug\netcoreapp3.1\XLSValidator.AssemblyInfo.cs
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\obj\Debug\netcoreapp3.1\XLSValidator.csproj.CoreCompileInputs.cache
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\obj\Debug\netcoreapp3.1\XLSValidator.dll
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\obj\Debug\netcoreapp3.1\XLSValidator.pdb
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\obj\Debug\netcoreapp3.1\XLSValidator.genruntimeconfig.cache

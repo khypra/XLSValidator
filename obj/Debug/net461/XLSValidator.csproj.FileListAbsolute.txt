@@ -1,0 +1,17 @@
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\obj\Debug\net461\XLSValidator.csprojAssemblyReference.cache
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\obj\Debug\net461\XLSValidator.Form1.resources
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\obj\Debug\net461\XLSValidator.csproj.GenerateResource.cache
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\obj\Debug\net461\XLSValidator.AssemblyInfoInputs.cache
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\obj\Debug\net461\XLSValidator.AssemblyInfo.cs
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\obj\Debug\net461\XLSValidator.csproj.CoreCompileInputs.cache
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\bin\Debug\net461\XLSValidator.exe.config
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\bin\Debug\net461\XLSValidator.exe
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\bin\Debug\net461\XLSValidator.pdb
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\bin\Debug\net461\LinqToExcel.dll
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\bin\Debug\net461\Remotion.Data.Linq.dll
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\bin\Debug\net461\Remotion.Interfaces.dll
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\bin\Debug\net461\Remotion.dll
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\bin\Debug\net461\log4net.dll
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\obj\Debug\net461\XLSValidator.csproj.CopyComplete
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\obj\Debug\net461\XLSValidator.exe
+C:\Users\mathe\Documents\Atos\Atos Projetos\XLSValidator\obj\Debug\net461\XLSValidator.pdb

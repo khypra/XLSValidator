@@ -1,0 +1,58 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "LinqToExcel_x64/1.10.1": {
+        "dependencies": {
+          "log4net": "1.2.10"
+        },
+        "runtime": {
+          "lib/LinqToExcel.dll": {
+            "assemblyVersion": "1.10.1.0",
+            "fileVersion": "1.10.1.0"
+          },
+          "lib/Remotion.Data.Linq.dll": {
+            "assemblyVersion": "1.13.52.2",
+            "fileVersion": "1.13.52.2"
+          },
+          "lib/Remotion.Interfaces.dll": {
+            "assemblyVersion": "1.13.52.2",
+            "fileVersion": "1.13.52.2"
+          },
+          "lib/Remotion.dll": {
+            "assemblyVersion": "1.13.52.2",
+            "fileVersion": "1.13.52.2"
+          }
+        }
+      },
+      "log4net/1.2.10": {
+        "runtime": {
+          "lib/2.0/log4net.dll": {
+            "assemblyVersion": "1.2.10.0",
+            "fileVersion": "1.2.10.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LinqToExcel_x64/1.10.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MssAn6qr/nem5gBYQxVHPDdE6upHvRGw+rmL4HzGTC6auYVEaX4VR6r0/4UOcz6Mcgv9oqJbbbeXgRg4QfAjzA==",
+      "path": "linqtoexcel_x64/1.10.1",
+      "hashPath": "linqtoexcel_x64.1.10.1.nupkg.sha512"
+    },
+    "log4net/1.2.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yP7PCpxPt5cB9yiRAvCwyW5YRqXV4jM4tpVLnm/ls2nJt786l5srbSdm5xIEVMXz/kOYqLKP177Gyqey1wdP/A==",
+      "path": "log4net/1.2.10",
+      "hashPath": "log4net.1.2.10.nupkg.sha512"
+    }
+  }
+}

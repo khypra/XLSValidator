@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "OPCQTJ1yyLKX/WWUftdvS0XTP5XBUOskkppJOK6eOFfSSshEFz4FTPdW5+R/1Jg2AMnPObea8KF1Ar06GraIGA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mathe\\Documents\\Atos\\Atos Projetos\\XLSValidator\\XLSValidator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mathe\\.nuget\\packages\\linqtoexcel_x64\\1.10.1\\linqtoexcel_x64.1.10.1.nupkg.sha512",
+    "C:\\Users\\mathe\\.nuget\\packages\\log4net\\1.2.10\\log4net.1.2.10.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1602",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "LinqToExcel_x64 1.10.1 não fornece nenhum limite inferior inclusivo para a dependência log4net. A melhor correspondência aproximada log4net 1.2.10 foi resolvida.",
+      "libraryId": "log4net",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.6.1",
+        ".NETFramework,Version=v4.6.1/win7-x86"
+      ]
+    }
+  ]
+}
