@@ -24,6 +24,13 @@ namespace AtosCapital
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// função que recebe uma lista generica e converte ela em datatable
+        /// </summary>
+        /// <typeparam class = "T"></typeparam>
+        /// <param name = "models"></param>
+        /// <returns>retorna um DataTable para ser inserido em um Dataset </returns>
         static DataTable ConvertToDataTable<T>(List<T> models)
         {
             // creating a data table instance and typed it as our incoming model   
@@ -58,17 +65,18 @@ namespace AtosCapital
         //manual da classe externa EasyXLS https://www.easyxls.com/manual/index.html
         public void GenerateExcel(DataTable notas)
         {
-            try {
+            try
+            {
                 string diaHoraAgora = DateTime.Now.ToString("dd-MM-yy HH-mm-ss");
                 ExcelDocument excelFile = new ExcelDocument();
                 DataSet dataSet = new DataSet();
                 dataSet.Tables.Add(notas);
-                excelFile.easy_WriteXLSFile_FromDataSet(baseDiretory + "\\Processamento " + diaHoraAgora 
-                                                    + ".xls", dataSet, new EasyXLS.ExcelAutoFormat(EasyXLS.Constants.Styles.AUTOFORMAT_EASYXLS1), "Processamento"+ diaHoraAgora);
+                excelFile.easy_WriteXLSFile_FromDataSet(baseDiretory + "\\Processamento " + diaHoraAgora
+                                                    + ".xls", dataSet, new EasyXLS.ExcelAutoFormat(EasyXLS.Constants.Styles.AUTOFORMAT_EASYXLS1), "Processamento" + diaHoraAgora);
                 MessageBox.Show("Processamento Concluido com Sucesso");
                 comparativo = new List<Nota>();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
@@ -76,17 +84,17 @@ namespace AtosCapital
 
         private void CompararDados(List<Nota> notas)
         {
-            
-            foreach(Nota nota in notas)
+
+            foreach (Nota nota in notas)
             {
-                label1.Text = "Lendo o CNPJ: " + nota.nmArquivo;
+                label1.Text = "Lendo a Filial: " + nota.nmArquivo;
                 using (BancoDados _dbAtos = new BancoDados(true))
                 {
                     float soma = 0;
                     var dados = _dbAtos.SqlQueryDataTable(@"select SUM(vlTotalNFe) AS soma from tax.tbNotaFiscal M (NOLOCK) 
-                                                            WHERE CONVERT(date,  M.dtEmissao) = '"+ nota.dtNota +"' and M.nrCNPJEmt = '"+ nota.nmArquivo +"'"+
+                                                            WHERE CONVERT(date,  M.dtEmissao) = '" + nota.dtNota + "' and M.nrCNPJEmt = '" + nota.nmCNPJ + "'" +
                                                             "GROUP BY M.nrCNPJEmt");
-                    foreach(DataRow row in dados.Rows)
+                    foreach (DataRow row in dados.Rows)
                     {
                         soma = float.Parse(row["soma"].ToString());
                     }
@@ -99,7 +107,7 @@ namespace AtosCapital
                     }
                     else
                     {
-                        nota.descricao = "diferença entre valores: Contabil =" + (nota.vlContabil - soma ) + "  :  Mercadoria=" + ( nota.vlMercadoria - soma);
+                        nota.descricao = "diferença entre valor Contabil = " + (nota.vlContabil - soma);
                         nota.vlAtos = soma;
                         comparativo.Add(nota);
                         progressBar1.PerformStep();
@@ -117,21 +125,21 @@ namespace AtosCapital
             using (BancoDados _dbAtos = new BancoDados(true))
             {
                 var dados = _dbAtos.SqlQueryDataTable(@"select M.vlTotalNFe, M.nrChaveAcesso AS nrChave from tax.tbNotaFiscal M (NOLOCK) 
-                                                            WHERE CONVERT(date,  M.dtEmissao) = '" + dateTimePicker1.Value.ToString("yyyyMMdd") + "' and M.nrCNPJEmt = '" + notas[0].nmArquivo + "';");
-                    
-                
+                                                            WHERE CONVERT(date,  M.dtEmissao) = '" + dateTimePicker1.Value.ToString("yyyyMMdd") + "' and M.nrCNPJEmt = '" + notas[0].nmCNPJ + "';");
+
+
                 foreach (DataRow row in dados.Rows)
                 {
                     compara.Add(new Nota
-                    { 
-                      nmArquivo = notas[0].nmArquivo,
-                      dtNota = dateTimePicker1.Value.ToString("yyyyMMdd"),
-                      vlAtos =  float.Parse(row["vltotalNFe"].ToString()), 
-                      cdChave = row["nrChave"].ToString() 
+                    {
+                        nmCNPJ = notas[0].nmCNPJ,
+                        dtNota = dateTimePicker1.Value.ToString("yyyyMMdd"),
+                        vlAtos = float.Parse(row["vltotalNFe"].ToString()),
+                        cdChave = row["nrChave"].ToString()
                     });
                 }
 
-                foreach(Nota n in compara)
+                foreach (Nota n in compara)
                 {
                     temp2 = new Nota();
                     temp2 = notas.Find(x => x.cdChave == n.cdChave);
@@ -146,7 +154,7 @@ namespace AtosCapital
                         {
                             n.vlMercadoria = temp2.vlMercadoria;
                             n.vlContabil = temp2.vlContabil;
-                            n.descricao = "diferença entre vlCliente = "+ temp2.vlContabil +" e vlAtos = " + n.vlAtos;
+                            n.descricao = "diferença entre vlCliente = " + temp2.vlContabil + " e vlAtos = " + n.vlAtos;
                             comparativo.Add(n);
                             notas.Remove(temp2);
                             progressBar2.PerformStep();
@@ -159,7 +167,7 @@ namespace AtosCapital
                         progressBar2.PerformStep();
                     }
                 }
-                foreach(Nota n in notas)
+                foreach (Nota n in notas)
                 {
                     n.descricao = "Nota existe no cliente e não existe na atos";
                     comparativo.Add(n);
@@ -170,7 +178,11 @@ namespace AtosCapital
 
         }
 
-
+        /// <summary>
+        /// Função que remove traços culturais de linguagem (acentos) 
+        /// </summary>
+        /// <param string a ser processada = "text"></param>
+        /// <returns>Retorna a string sem os traços culturais de linguagem </returns>
         static string RemoveDiacritics(string text)
         {
             return string.Concat(
@@ -183,12 +195,7 @@ namespace AtosCapital
         private void ObterXLS(object sender, EventArgs e)
         {
             Filiais temp = new Filiais();
-            Filiais aux = new Filiais();
-            List<Filiais> filiais = aux.listarFiliais();
-            foreach(Filiais f in filiais)
-            {
-                Console.WriteLine(f.ds_fantasia);
-            }
+            List<Filiais> filiais = temp.listarFiliais();
             List<Nota> listaNotas;
 
             try
@@ -213,16 +220,17 @@ namespace AtosCapital
 
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    foreach (string name in openFileDialog1.FileNames) 
+                    foreach (string name in openFileDialog1.FileNames)
                     {
                         listaNotas = new List<Nota>();
                         baseDiretory = Path.GetDirectoryName(name);
                         string nameArqv = Path.GetFileNameWithoutExtension(name);
                         nameArqv = RemoveDiacritics(nameArqv);
-                        try{
+                        try
+                        {
                             temp = null;
                             temp = filiais.Find(x => x.ds_fantasia.Contains(nameArqv));
-                            if(temp == null)
+                            if (temp == null)
                             {
                                 MessageBox.Show("Nome do Arquivo não refere a uma Filial");
                                 break;
@@ -249,13 +257,15 @@ namespace AtosCapital
                             {
                                 listaNotas.Add(new Nota
                                 {
-                                    nmArquivo = temp.nu_cnpj,
+                                    dsFantasia = temp.ds_fantasia,
+                                    nmCNPJ = temp.nu_cnpj,
+                                    nmArquivo = nameArqv,
                                     vlMercadoria = g.vlMercadoria,
                                     vlContabil = g.vlContabil,
                                     dtNota = g.dtNota.ToString("yyyyMMdd"),
                                     descricao = "",
                                     vlAtos = 0
-                                }) ;
+                                });
 
                             }
 
@@ -269,13 +279,13 @@ namespace AtosCapital
                                 progressBar1.Step = 1;
                                 CompararDados(listaNotas);
                             }
-                            catch(Exception err)
+                            catch (Exception err)
                             {
                                 MessageBox.Show(err.Message);
                             }
 
                         }
-                        
+
                     }
                     //depois de rodar todas os arquivos converte a lista em DataTable e manda para a conversão em xls
                     DataTable result = ConvertToDataTable<Nota>(comparativo);
@@ -292,12 +302,7 @@ namespace AtosCapital
         private void CompararDiaErro(object sender, EventArgs e)
         {
             Filiais temp = new Filiais();
-            Filiais aux = new Filiais();
-            List<Filiais> filiais = aux.listarFiliais();
-            foreach (Filiais f in filiais)
-            {
-                Console.WriteLine(f.ds_fantasia);
-            }
+            List<Filiais> filiais = temp.listarFiliais();
             List<Nota> listaNotas;
 
             try
@@ -361,7 +366,9 @@ namespace AtosCapital
                                 listaNotas.Add(new Nota
                                 {
                                     cdChave = g.cdChave,
-                                    nmArquivo = temp.nu_cnpj,
+                                    dsFantasia = temp.ds_fantasia,
+                                    nmCNPJ = temp.nu_cnpj,
+                                    nmArquivo = nameArqv,
                                     vlMercadoria = g.vlMercadoria,
                                     vlContabil = g.vlContabil,
                                     dtNota = g.dtNota.ToString("yyyyMMdd"),
@@ -402,8 +409,96 @@ namespace AtosCapital
             DataTable result = ConvertToDataTable<Nota>(comparativo);
             GenerateExcel(result);
         }
-    }
 
-   
+        private void CompararXlsProcessado(object sender, EventArgs e)
+        {
+            Filiais temp = new Filiais();
+            List<Nota> listaNotas;
+
+            try
+            {
+                OpenFileDialog openFileDialog1 = new OpenFileDialog
+                {
+                    InitialDirectory = @"C:\",
+                    Title = "Abrir arquivo XLS",
+
+                    CheckFileExists = true,
+                    CheckPathExists = true,
+                    Multiselect = false,
+
+                    DefaultExt = "xls",
+                    Filter = "Arquivos Excel (*.xls)|*.xls| Arquivos Excel (*.xlsx)|*.xlsx | Todos (*)|*.*",
+                    FilterIndex = 1,
+                    RestoreDirectory = true,
+
+                    ReadOnlyChecked = true,
+                    ShowReadOnly = true
+                };
+
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    foreach (string name in openFileDialog1.FileNames)
+                    {
+                        listaNotas = new List<Nota>();
+                        baseDiretory = Path.GetDirectoryName(name);
+                        var file = new LinqToExcel.ExcelQueryFactory(@"" + name);
+                        if (file != null)
+                        {
+
+                            var querry =
+                                from row in file.Worksheet("Sheet")
+                                let item = new
+                                {
+                                    dsFantasia = row["dsFantasia"].Cast<String>(),
+                                    nmCNPJ = row["nmCNPJ"].Cast<String>(),
+                                    nmArquivo = row["nmArquivo"].Cast<String>(),
+                                    dtNota = row["dtNota"].Cast<DateTime>(),
+                                    descricao = row["descricao"].Cast<String>(),
+                                }
+                                select item;
+                            foreach (var g in querry)
+                            {
+                                if(!g.descricao.Equals("ok"))
+                                {
+                                    listaNotas.Add(new Nota
+                                    {
+                                        dsFantasia = g.dsFantasia,
+                                        nmCNPJ = g.nmCNPJ,
+                                        nmArquivo = g.nmArquivo,
+                                        dtNota = g.dtNota.ToString("yyyyMMdd"),
+                                        descricao = "",
+                                        vlAtos = 0,
+                                        vlContabil = 0,
+                                        vlMercadoria = 0
+
+                                    });
+                                }
+                            }
+
+                            try
+                            {
+                                listaNotas = Nota.notasAgrupadasPorChave(listaNotas, dateTimePicker1.Value);
+                                label2.Text = "Comparando Arquivo: ";
+                                progressBar2.Maximum = listaNotas.Count();
+                                progressBar2.Minimum = 0;
+                                progressBar2.Value = 0;
+                                progressBar2.Step = 1;
+                            }
+                            catch (Exception err)
+                            {
+                                MessageBox.Show(err.Message);
+                            }
+
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+    }
 }
 

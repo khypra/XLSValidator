@@ -8,6 +8,8 @@ namespace AtosCapital
 {
     public class Nota
     {
+        public string dsFantasia { get; set; }
+        public string nmCNPJ { get; set; }
         public string nmArquivo { get; set; }
         public string dtNota { get; set; }
         public float vlMercadoria { get; set; }
@@ -21,9 +23,11 @@ namespace AtosCapital
 
             List<Nota> notas = new List<Nota>();
 
-            notas = notaNaoAgrupadas.GroupBy(e => new { e.nmArquivo, e.dtNota})
+            notas = notaNaoAgrupadas.GroupBy(e => new { e.nmCNPJ, e.dtNota, e.dsFantasia, e.nmArquivo})
                 .Select(s => new Nota
                 {
+                    dsFantasia = s.Key.dsFantasia,
+                    nmCNPJ = s.Key.nmCNPJ,
                     dtNota = s.Key.dtNota,
                     nmArquivo = s.Key.nmArquivo,
                     vlMercadoria = s.Sum(a => a.vlMercadoria),
@@ -42,8 +46,10 @@ namespace AtosCapital
                 .Select(s => new Nota
                 {
                     cdChave = s.Key,
-                    dtNota = s.First().dtNota,
                     nmArquivo = s.First().nmArquivo,
+                    dsFantasia = s.First().dsFantasia,
+                    dtNota = s.First().dtNota,
+                    nmCNPJ = s.First().nmCNPJ,
                     vlMercadoria = s.Sum(a => a.vlMercadoria),
                     vlContabil = s.Sum(a => a.vlContabil),
                 }).ToList();

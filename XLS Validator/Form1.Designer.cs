@@ -42,9 +42,15 @@ namespace AtosCapital
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.progressBar3 = new System.Windows.Forms.ProgressBar();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -81,6 +87,7 @@ namespace AtosCapital
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(12, 11);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -168,6 +175,53 @@ namespace AtosCapital
             this.progressBar2.Size = new System.Drawing.Size(271, 23);
             this.progressBar2.TabIndex = 4;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.label4);
+            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Controls.Add(this.button4);
+            this.tabPage3.Controls.Add(this.progressBar3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(296, 126);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Listar Notas Por XLS";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(9, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(259, 29);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Selecione um XLS resultado de processamento do XLS Validator.";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 50);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Progresso";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(90, 96);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(94, 21);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Selecionar XLS";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.CompararXlsProcessado);
+            // 
+            // progressBar3
+            // 
+            this.progressBar3.Location = new System.Drawing.Point(12, 67);
+            this.progressBar3.Name = "progressBar3";
+            this.progressBar3.Size = new System.Drawing.Size(271, 23);
+            this.progressBar3.TabIndex = 9;
+            // 
             // XLSValidator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,6 +235,8 @@ namespace AtosCapital
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -200,6 +256,11 @@ namespace AtosCapital
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ProgressBar progressBar3;
     }
 }
 
